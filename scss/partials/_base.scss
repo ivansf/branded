@@ -1,0 +1,206 @@
+$bg-color: #FFFFFF;
+$bg-secondary: #F0F3F4;
+$bg-header: #E4EAEC;
+$primary-border: #dee5e7;
+
+$text-color: #58666e;
+$text-color-bold: #333333;
+
+$link-color: #428bca;
+$link-hover: #4ca0e8;
+
+$primaryBorder: #d8e1e3;
+$bgSubtle: #edf1f2;
+$primaryBlack: #333333;
+$bgDisabled: #333333;
+$textDisabled: #333333;
+$red: #F06A6A;
+
+
+// FAPI
+$fieldset-bg-color: #FFF;
+$button-default-bg: #edf1f2;
+
+// Errors
+$error-bg: #F2DEDE;
+$status-bg: #F06A6A;
+$warning-bg: #F06A6A;
+
+
+body {
+  background: $bg-secondary;
+  padding: 0;
+  margin: 0;
+  color: $text-color;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 1em;
+
+  h1,h2,h3,h4,h5 {
+    font-weight: normal;
+  }
+
+  h2 {
+    color: $text-color-bold;
+    font-size: 150%;
+  }
+
+  h3 {
+    color: $text-color-bold;
+  }
+
+  a {
+    color: $link-color;
+    text-decoration: none;
+    &:hover {
+      color: $link-hover;
+    }
+  }
+
+
+  #page-header {
+    background: $bg-header;
+    color: #FFF;
+    padding: 20px;
+
+    a {
+      color: #FFF;
+
+      &:hover {
+        color: #a2c8fd;
+      }
+    }
+
+    h1 {
+      padding: 0;
+      margin: 0;
+      color: #58666e;
+      font-size: 220%;
+      font-weight: lighter;
+    }
+
+
+    #breadcrumb {
+      color: lighten($text-color, 10%);
+      font-weight: light;
+      font-size: 80%;
+      a {
+        color: lighten($text-color, 10%);
+      }
+    }
+
+  }
+
+
+  #page {
+    background: $bg-color;
+    border: 1px solid $primary-border;
+    border-radius: 3px;
+
+    margin: 0 15px 15px 15px;
+    padding: 25px;
+  }
+
+}
+
+
+/**
+Messages
+**/
+div.messages {
+  margin: 15px 20px;
+  font-size: 82%;
+
+  li {
+    line-height: 165%;
+  }
+
+  &.error {
+    background: $error-bg;
+    color: darken($error-bg, 35%);
+    border-color: darken($error-bg, 5%);
+
+    &:hover {
+      background: darken($error-bg, 5%);
+    }
+
+    a {
+      color: lighten($error-bg, 5%);
+      text-decoration: underline;
+    }
+  }
+
+}
+
+/**
+Admin Sections
+**/
+.admin-list {
+
+  dt {
+
+  }
+
+  dd {
+    font-size: 90%;
+    margin-left: 0;
+    margin-bottom: 12px;
+  }
+}
+
+
+@mixin button {
+  color: $text-color-bold !important;
+  background-color: $button-default-bg;
+  border-bottom-color: $primaryBorder;
+  -webkit-box-shadow: 0 1px 1px rgba(90,90,90,0.1);
+  box-shadow: 0 1px 1px rgba(90,90,90,0.1);
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 130%;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  background-image: none;
+  border: 1px solid #dee5e7;
+  border-radius: 4px;
+}
+%button-default {
+  @include button;
+}
+
+%button-green {
+  @extend %button;
+}
+
+%button-green-medium {
+  @extend %button;
+}
+
+%button-blue {
+  @extend %button;
+}
+
+%button-blue-medium {
+  @extend %button;
+}
+
+%button-red {
+  @extend %button;
+}
+
+%button-yellow {
+  @extend %button;
+}
+
+%button-dark {
+  @extend %button;
+}
+
+%button-medium {
+  @extend %button;
+}

@@ -1,0 +1,24 @@
+ul.primary {
+  margin: 0 15px 0 15px;
+  border: none;
+  padding: 0;
+
+  li {
+    display: inline-block;
+    padding: 8px 0;
+    a {
+      border-radius: 3px 3px 0 0;
+      border-color: transparent;
+      border-bottom: none;
+      padding: 9px 23px;
+      background: none;
+
+      &.active {
+        border-color: $primary-border;
+        border-bottom: none;
+        padding: 9px 23px;
+      }
+    }
+
+  }
+}
