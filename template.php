@@ -14,11 +14,11 @@ function branded_page_alter(&$page) {
 	if (module_exists('toolbar') && user_access('access toolbar')) {
 		drupal_add_css(drupal_get_path('theme', 'branded') . '/css/override.toolbar.css', $css_options);
 	}
-
-	// add admin toolbar css
-	if (module_exists('admin') && user_access('use admin toolbar')) {
-		drupal_add_css(drupal_get_path('theme', 'branded') . '/css/override.toolbar.css', $css_options);
-	}
+//
+//	// add admin toolbar css
+//	if (module_exists('admin') && user_access('use admin toolbar')) {
+//		drupal_add_css(drupal_get_path('theme', 'branded') . '/css/override.toolbar.css', $css_options);
+//	}
 
 }
 

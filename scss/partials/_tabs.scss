@@ -1,3 +1,7 @@
+$tabs-padding-vertical: 9px;
+$tabs-padding-horizontal: 23px;
+$tabs-li-padding: $tabs-padding-vertical - 1px;
+
 ul.primary {
   margin: 0 15px 0 15px;
   border: none;
@@ -5,18 +9,19 @@ ul.primary {
 
   li {
     display: inline-block;
-    padding: 8px 0;
+    padding: $tabs-li-padding 0;
     a {
       border-radius: 3px 3px 0 0;
       border-color: transparent;
       border-bottom: none;
-      padding: 9px 23px;
+      padding: $tabs-padding-vertical $tabs-padding-horizontal;
       background: none;
+      margin-right: 0;
 
       &.active {
         border-color: $primary-border;
         border-bottom: none;
-        padding: 9px 23px;
+        padding: $tabs-padding-vertical $tabs-padding-horizontal;
       }
     }
 

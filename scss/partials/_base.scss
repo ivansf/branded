@@ -1,13 +1,16 @@
 $bg-color: #FFFFFF;
 $bg-secondary: #F0F3F4;
 $bg-header: #E4EAEC;
-$primary-border: #dee5e7;
+$primary-border: #e7eef0;
 
 $text-color: #58666e;
+$text-color-secondary: #6b7c86;
 $text-color-bold: #333333;
 
 $link-color: #428bca;
 $link-hover: #4ca0e8;
+$link-color-secondary: #687c85;
+$link-color-secondary-hover: #8aa5b1;
 
 $primaryBorder: #d8e1e3;
 $bgSubtle: #edf1f2;
@@ -134,16 +137,63 @@ div.messages {
 /**
 Admin Sections
 **/
-.admin-list {
 
-  dt {
+div.admin .left {
+  margin-left: 5px;
+  width: 48%;
+}
+div.admin .right {
+  margin-left: 5px;
+}
+
+div.admin .compact-link {
+  a {
+    font-size: 80%;
+    color: $link-color-secondary;
+  }
+}
+
+div.admin-panel {
+
+  border: 1px solid $primary-border;
+  border-radius: 3px;
+
+  background: $bg-secondary;
+  margin-bottom: 5px;
+  padding: 15px 10px 10px 15px;
+
+  h3 {
+    margin: 0;
+    line-height: 25px;
+    font-weight: bold;
+  }
+
+  .body {
+
+    padding: 0;
+
+
 
   }
 
+
+}
+
+
+.admin-list {
+
+  padding: 0;
+  margin: 5px 0;
+
+  dt {
+    line-height: 22px;
+  }
+
   dd {
-    font-size: 90%;
+    font-size: 80%;
     margin-left: 0;
     margin-bottom: 12px;
+    color: $text-color-secondary;
   }
 }
 

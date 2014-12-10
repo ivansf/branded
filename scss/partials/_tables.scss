@@ -1,0 +1,40 @@
+table {
+  width: 100%;
+  font-size: 85%;
+
+  tr {
+
+    th {
+      padding: 0.5em;
+    }
+
+    td {
+      padding: 0.5em;
+      border-bottom: 1px solid #efefef;
+
+
+      &.description {
+        font-size: 90%;
+        width: 60%;
+
+        .admin-requirements {
+          line-height: 1.4;
+        }
+      }
+
+    }
+
+
+    &.even {
+      background: none;
+    }
+
+    &.odd {
+      background: #FAFAFA;
+    }
+
+  }
+
+
+
+}

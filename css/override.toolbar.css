@@ -1,7 +1,30 @@
 
+#toolbar {
+
+
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    filter: none;
+}
+
 #toolbar div.toolbar-menu {
-    background: red;
+    background: #496e8f;
     line-height: 20px;
     padding: 5px 50px 5px 10px; /* LTR */
     position: relative;
+}
+
+#toolbar div.toolbar-drawer {
+    background: #7196ac;
+}
+
+#toolbar div.toolbar-menu a.toggle {
+    background: #7196ac 0 -20px no-repeat;
+}
+
+#toolbar div.toolbar-menu ul li a.active, #toolbar div.toolbar-menu ul li.active-trail a {
+    background: #5d8cb6;
+}
+#toolbar div.toolbar-menu ul li a.active:hover, #toolbar div.toolbar-menu ul li.active-trail a:hover {
+    background: #6fa7d9;
 }

@@ -39,7 +39,7 @@ body {
         color: #6f818a; }
   body #page {
     background: white;
-    border: 1px solid #dee5e7;
+    border: 1px solid #e7eef0;
     border-radius: 3px;
     margin: 0 15px 15px 15px;
     padding: 25px; }
@@ -65,10 +65,40 @@ div.messages {
 /**
 Admin Sections
 **/
-.admin-list dd {
-  font-size: 90%;
-  margin-left: 0;
-  margin-bottom: 12px; }
+div.admin .left {
+  margin-left: 5px;
+  width: 48%; }
+
+div.admin .right {
+  margin-left: 5px; }
+
+div.admin .compact-link a {
+  font-size: 80%;
+  color: #687c85; }
+
+div.admin-panel {
+  border: 1px solid #e7eef0;
+  border-radius: 3px;
+  background: #f0f3f4;
+  margin-bottom: 5px;
+  padding: 15px 10px 10px 15px; }
+  div.admin-panel h3 {
+    margin: 0;
+    line-height: 25px;
+    font-weight: bold; }
+  div.admin-panel .body {
+    padding: 0; }
+
+.admin-list {
+  padding: 0;
+  margin: 5px 0; }
+  .admin-list dt {
+    line-height: 22px; }
+  .admin-list dd {
+    font-size: 80%;
+    margin-left: 0;
+    margin-bottom: 12px;
+    color: #6b7c86; }
 
 button, input[type="submit"], input[type="image"] {
   color: #333333 !important;
@@ -632,8 +662,30 @@ ul.primary {
       border-color: transparent;
       border-bottom: none;
       padding: 9px 23px;
-      background: none; }
+      background: none;
+      margin-right: 0; }
       ul.primary li a.active {
-        border-color: #dee5e7;
+        border-color: #e7eef0;
         border-bottom: none;
         padding: 9px 23px; }
+
+.views-admin .views-displays {
+  background: #f0f3f4; }
+
+table {
+  width: 100%;
+  font-size: 85%; }
+  table tr th {
+    padding: 0.5em; }
+  table tr td {
+    padding: 0.5em;
+    border-bottom: 1px solid #efefef; }
+    table tr td.description {
+      font-size: 90%;
+      width: 60%; }
+      table tr td.description .admin-requirements {
+        line-height: 1.4; }
+  table tr.even {
+    background: none; }
+  table tr.odd {
+    background: #fafafa; }
