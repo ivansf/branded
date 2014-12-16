@@ -5,3 +5,16 @@ engine = phptemplate
 version = 1.0
 
 stylesheets[screen][] = css/branded.css
+
+scripts[] = js/branded.js
+
+features[] = logo
+features[] = node_user_picture
+features[] = comment_user_picture
+features[] = comment_user_verification
+features[] = favicon
+
+
+settings[branded-logo] = 'asdasd'
+settings[branded-left] = 0
+settings[branded-full] = 1

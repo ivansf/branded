@@ -3,6 +3,7 @@ $tabs-padding-horizontal: 23px;
 $tabs-li-padding: $tabs-padding-vertical - 1px;
 
 ul.primary {
+
   margin: 0 15px 0 15px;
   border: none;
   padding: 0;
@@ -10,6 +11,7 @@ ul.primary {
   li {
     display: inline-block;
     padding: $tabs-li-padding 0;
+
     a {
       border-radius: 3px 3px 0 0;
       border-color: transparent;
@@ -17,11 +19,124 @@ ul.primary {
       padding: $tabs-padding-vertical $tabs-padding-horizontal;
       background: none;
       margin-right: 0;
+      color: lighten($text-color-secondary, 10%);
+
+      a:hover {
+        background: none;
+        color: $link-color;
+      }
+
+    }
+
+    &.active {
+      &:hover {
+        background: none;
+      }
+
+      a {
+        &.active {
+          border-color: $primary-border;
+          border-bottom: none;
+          padding: $tabs-padding-vertical $tabs-padding-horizontal;
+          color: $link-color;
+
+          &:hover {
+            background: white;
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+ul.tabs.secondary {
+
+  padding: 0;
+  height: 40px;
+  border: none;
+  margin: -10px 0 0;
+
+  li {
+    font-size: 90%;
+    border: none;
+    padding: 0 4px;
+
+    &.active {
+      border: none;
+    }
+
+    a {
+      display: inline-block;
+      min-width: 10px;
+      padding: 3px 14px;
+      line-height: 1.5;
+      color: $link-color;
+      text-align: center;
+      white-space: nowrap;
+      vertical-align: baseline;
+      background: none;
+      border-radius: 13px;
+
+      &:hover {
+        background: lighten($link-color, 40%);
+      }
 
       &.active {
-        border-color: $primary-border;
-        border-bottom: none;
-        padding: $tabs-padding-vertical $tabs-padding-horizontal;
+        border: none;
+        background: $link-color;
+        color: white;
+
+      }
+    }
+
+  }
+
+}
+
+ul.action-links {
+
+  padding: 0;
+  height: 40px;
+  border: none;
+  margin: -10px 0 0;
+  list-style: none;
+
+  li {
+    font-size: 90%;
+    border: none;
+    padding: 0 4px;
+    display: inline-block;
+
+    &.active {
+      border: none;
+    }
+
+    a {
+      display: inline-block;
+      min-width: 10px;
+      padding: 3px 14px;
+      line-height: 1.5;
+      color: $link-color;
+      text-align: center;
+      white-space: nowrap;
+      vertical-align: baseline;
+      background: none;
+      border-radius: 13px;
+
+      &:hover {
+        background: lighten($text-color, 55%);
+      }
+
+      &.active {
+        border: none;
+        background: $link-color;
+        color: white;
+
       }
     }
 

@@ -11,6 +11,37 @@ function branded_page_alter(&$page) {
 		'every_page' => TRUE,
 	);
 
+//	drupal_set_message(print_r(theme_get_setting('branded-logo'), true));
+//	drupal_set_message("testing out a very long error message.
+//	<ul>
+//		<li>asdasd</li>
+//		<li>asd</li>
+//		<li>asdasdasdas</li>
+//	</ul>
+//	<a href=\"#\">Testing out the link!</a>
+//
+//	testing out a very long error message. testing out a very long error message. testing out a very long error message");
+//	drupal_set_message("testing out a very long error message. testing out a very long error message. testing out a very long error message. testing out a very long error message
+//	<ul>
+//		<li>asdasd</li>
+//		<li>asd</li>
+//		<li>asdasdasdas</li>
+//	</ul>
+//	<a href=\"#\">Testing out the link!</a>
+//	", 'warning');
+//	drupal_set_message(theme_get_setting('branded-left'));
+//
+//
+//	drupal_set_message("testing out a very long error message.
+//	<ul>
+//		<li>asdasd</li>
+//		<li>asd</li>
+//		<li>asdasdasdas</li>
+//	</ul>
+//	<a href=\"#\">Testing out the link!</a>
+//
+//	testing out a very long error message. testing out a very long error message. testing out a very long error message", "error");
+
 	if (module_exists('toolbar') && user_access('access toolbar')) {
 		drupal_add_css(drupal_get_path('theme', 'branded') . '/css/override.toolbar.css', $css_options);
 	}

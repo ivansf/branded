@@ -26,8 +26,8 @@ $button-default-bg: #edf1f2;
 
 // Errors
 $error-bg: #F2DEDE;
-$status-bg: #F06A6A;
-$warning-bg: #F06A6A;
+$status-bg: #a5f09e;
+$warning-bg: #eef0bb;
 
 
 body {
@@ -59,48 +59,98 @@ body {
     }
   }
 
-
-  #page-header {
-    background: $bg-header;
-    color: #FFF;
-    padding: 20px;
-
-    a {
-      color: #FFF;
-
-      &:hover {
-        color: #a2c8fd;
-      }
-    }
-
-    h1 {
-      padding: 0;
-      margin: 0;
-      color: #58666e;
-      font-size: 220%;
-      font-weight: lighter;
-    }
+  textarea, input { outline: none; }
 
 
-    #breadcrumb {
-      color: lighten($text-color, 10%);
-      font-weight: light;
-      font-size: 80%;
-      a {
-        color: lighten($text-color, 10%);
-      }
-    }
 
-  }
 
 
   #page {
     background: $bg-color;
     border: 1px solid $primary-border;
     border-radius: 3px;
-
+    font-size: 90%;
     margin: 0 15px 15px 15px;
     padding: 25px;
+  }
+
+
+}
+
+.branded-wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+
+  &.full-width {
+    max-width: 100%;
+  }
+
+}
+
+
+
+/**
+Page Header
+**/
+
+#page-header {
+  background: $bg-header;
+  color: #FFF;
+  padding: 20px;
+  height: 75px;
+  border-bottom: 1px solid #C1D3D7;
+
+  a {
+    color: #FFF;
+
+    &:hover {
+      color: #a2c8fd;
+    }
+  }
+
+  h1 {
+    padding: 0;
+    margin: 0;
+    color: #58666e;
+    font-size: 220%;
+    font-weight: lighter;
+  }
+
+
+  #breadcrumb {
+    color: lighten($text-color, 20%);
+//    font-weight: light;
+    font-size: 80%;
+    margin-top: 6px;
+    a {
+      color: lighten($text-color, 20%);
+    }
+
+    &:hover {
+      a {
+        color: lighten($text-color, 15%);
+      }
+    }
+
+  }
+
+}
+
+.branding-left a {
+  background: darken($bg-header, 4%);
+  float: left;
+  height: 105px;
+  margin-right: 20px;
+  padding: 5px 20px;
+  border-right: 1px solid #C1D3D7;
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  &:hover {
+    background: darken($bg-header, 6%);
   }
 
 }
@@ -120,14 +170,46 @@ div.messages {
   &.error {
     background: $error-bg;
     color: darken($error-bg, 35%);
-    border-color: darken($error-bg, 5%);
+    border-color: darken($error-bg, 2%);
 
     &:hover {
       background: darken($error-bg, 5%);
+      border-color: darken($error-bg, 10%);
     }
 
     a {
-      color: lighten($error-bg, 5%);
+      color: darken($error-bg, 45%);
+      text-decoration: underline;
+    }
+  }
+
+  &.status {
+    background: $status-bg;
+    color: darken($status-bg, 40%);
+    border-color: darken($status-bg, 15%);
+
+    &:hover {
+      background: darken($status-bg, 5%);
+    }
+
+    a {
+      color: darken($status-bg, 45%);
+      text-decoration: underline;
+    }
+  }
+
+  &.warning {
+    background: $warning-bg;
+    color: darken($warning-bg, 45%);
+    border-color: darken($warning-bg, 10%);
+
+    &:hover {
+      background: darken($warning-bg, 5%);
+      border-color: darken($warning-bg, 15%);
+    }
+
+    a {
+      color: darken($warning-bg, 45%);
       text-decoration: underline;
     }
   }
@@ -253,4 +335,20 @@ div.admin-panel {
 
 %button-medium {
   @extend %button;
+}
+
+
+
+#block-system-help {
+
+  margin-bottom: 25px;
+
+  .content {
+    font-size: 90%;
+    color: lighten($text-color-secondary, 15%);
+  }
+
+
+
+
 }

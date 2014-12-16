@@ -1,17 +1,23 @@
 table {
   width: 100%;
-  font-size: 85%;
+  font-size: 92%;
+
+  tbody {
+    border-top: none;
+  }
 
   tr {
 
     th {
       padding: 0.5em;
+      color: darken($link-color, 50%);
+      border: none;
+
     }
 
     td {
       padding: 0.5em;
       border-bottom: 1px solid #efefef;
-
 
       &.description {
         font-size: 90%;
@@ -23,6 +29,8 @@ table {
       }
 
     }
+
+
 
 
     &.even {
