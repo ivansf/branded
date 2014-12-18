@@ -21,7 +21,7 @@ body {
     outline: none; }
   body #page {
     background: white;
-    border: 1px solid #e7eef0;
+    border: 1px solid #d8e1e3;
     border-radius: 3px;
     font-size: 90%;
     margin: 0 15px 15px 15px;
@@ -77,9 +77,28 @@ Page Header
 /**
 Messages
 **/
+#console {
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-bottom: 20px; }
+  #console #close-messages {
+    float: right;
+    background: #e4eaec;
+    color: #428bca;
+    border: 1px solid #c1d3d7;
+    border-top: 0;
+    font-size: 70%;
+    height: 25px;
+    line-height: 25px;
+    display: block;
+    padding-left: 10px;
+    padding-right: 10px; }
+  #console .message-list {
+    padding-top: 35px; }
+
 div.messages {
-  margin: 15px 20px;
-  font-size: 82%; }
+  font-size: 82%;
+  margin: 0 0 15px; }
   div.messages li {
     line-height: 165%; }
   div.messages.error {
@@ -127,7 +146,7 @@ div.admin .compact-link a {
   color: #687c85; }
 
 div.admin-panel {
-  border: 1px solid #e7eef0;
+  border: 1px solid #d8e1e3;
   border-radius: 3px;
   background: #f0f3f4;
   margin-bottom: 5px;
@@ -183,8 +202,14 @@ button, input[type="submit"], input[type="image"] {
   margin-bottom: 25px; }
   #block-system-help .content {
     font-size: 90%;
+    line-height: 1.6;
     color: #94a2aa; }
 
+/**
+
+Mixins
+
+**/
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
@@ -506,20 +531,27 @@ table {
 td, th {
   padding: 0; }
 
-input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea {
+input[type="text"], input[type="date"], input[type="time"], input[type="email"], input[type="number"], input[type="password"], input[type="datetime"], input[type="search"], input[type="tel"], input[type="url"], textarea {
   background-color: white;
   border: 1px solid #d8e1e3;
   color: #333333;
   margin-bottom: 5px;
   padding: 7px; }
-  input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="time"]:focus, input[type="url"]:focus, textarea:focus {
-    background: #edf1f2;
+  input[type="text"]:focus, input[type="date"]:focus, input[type="time"]:focus, input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="url"]:focus, textarea:focus {
+    background-color: #fcfcfc;
     outline: none;
-    border-color: #9db4b8; }
-  input[type="text"][disabled], input[type="password"][disabled], input[type="date"][disabled], input[type="datetime"][disabled], input[type="email"][disabled], input[type="number"][disabled], input[type="search"][disabled], input[type="tel"][disabled], input[type="time"][disabled], input[type="url"][disabled], textarea[disabled] {
+    border-color: #428bca; }
+  input[type="text"]:hover, input[type="date"]:hover, input[type="time"]:hover, input[type="email"]:hover, input[type="number"]:hover, input[type="password"]:hover, input[type="datetime"]:hover, input[type="search"]:hover, input[type="tel"]:hover, input[type="url"]:hover, textarea:hover {
+    -webkit-transition: border 0.2s ease-in-out;
+    -moz-transition: border 0.2s ease-in-out;
+    -ms-transition: border 0.2s ease-in-out;
+    -o-transition: border 0.2s ease-in-out;
+    transition: border 0.2s ease-in-out;
+    border-color: #428bca; }
+  input[type="text"][disabled], input[type="date"][disabled], input[type="time"][disabled], input[type="email"][disabled], input[type="number"][disabled], input[type="password"][disabled], input[type="datetime"][disabled], input[type="search"][disabled], input[type="tel"][disabled], input[type="url"][disabled], textarea[disabled] {
     background-color: #333333;
     color: #333333; }
-  input[type="text"].error, input[type="password"].error, input[type="date"].error, input[type="datetime"].error, input[type="email"].error, input[type="number"].error, input[type="search"].error, input[type="tel"].error, input[type="time"].error, input[type="url"].error, textarea.error {
+  input[type="text"].error, input[type="date"].error, input[type="time"].error, input[type="email"].error, input[type="number"].error, input[type="password"].error, input[type="datetime"].error, input[type="search"].error, input[type="tel"].error, input[type="url"].error, textarea.error {
     border: 1px solid #f06a6a; }
 
 select {
@@ -562,47 +594,59 @@ label {
     display: inline;
     font-weight: normal; }
 
-fieldset {
+.description, .fieldset-description, .compact-link {
+  color: #8a9aa2;
+  font-size: 80%;
+  line-height: 1.6; }
+
+/**
+
+Fieldsets
+
+**/
+fieldset, html.js fieldset {
   background: white;
   border: 1px solid #f0f0f0;
-  margin: 0 0 1em;
-  padding: 2.5em 0.625em 0.35em;
+  margin: 0 0 20px;
+  padding: 30px 15px 15px 15px;
   position: relative; }
-  fieldset.fieldset-no-legend {
+  fieldset.fieldset-no-legend, html.js fieldset.fieldset-no-legend {
     padding-top: 0.35em; }
-  fieldset .fieldset-legend {
-    background: #f2f2f2;
-    border-bottom: 1px solid #e6e6e6;
+  fieldset .fieldset-legend, html.js fieldset .fieldset-legend {
+    background: #e2e9ee;
+    border-bottom: 1px solid #c1d2db;
     color: #58666e;
     display: block;
-    font-weight: bold;
     padding: 5px 8px;
     position: absolute;
     text-shadow: 0 1px 0 white;
     top: 1px;
     right: 1px;
     left: 1px; }
-    fieldset .fieldset-legend a {
+    fieldset .fieldset-legend a, html.js fieldset .fieldset-legend a {
       text-decoration: none; }
-      fieldset .fieldset-legend a:hover {
+      fieldset .fieldset-legend a:hover, html.js fieldset .fieldset-legend a:hover {
         text-decoration: underline; }
-  fieldset.collapsible .fieldset-legend a:before {
-    content: '\25BE';
-    display: inline-block;
-    width: 15px; }
-  fieldset.container-inline {
+  fieldset.collapsible .fieldset-legend, html.js fieldset.collapsible .fieldset-legend {
+    background: #e2e9ee; }
+    fieldset.collapsible .fieldset-legend a:before, html.js fieldset.collapsible .fieldset-legend a:before {
+      content: '\25BE';
+      background: none;
+      display: inline-block;
+      width: 15px; }
+  fieldset.container-inline, html.js fieldset.container-inline {
     padding-top: 3.5em; }
-  fieldset.container-inline.fieldset-no-legend {
+  fieldset.container-inline.fieldset-no-legend, html.js fieldset.container-inline.fieldset-no-legend {
     padding-top: 0.35em; }
-  fieldset .exposed-filters {
+  fieldset .exposed-filters, html.js fieldset .exposed-filters {
     padding-top: 1em; }
-  html.js fieldset.collapsed {
+  html.js fieldset.collapsed, html.js html.js fieldset.collapsed {
     border-width: 1px;
-    height: 26px;
+    height: 14px;
     padding-top: 0; }
-    html.js fieldset.collapsed .fieldset-legend {
+    html.js fieldset.collapsed .fieldset-legend, html.js html.js fieldset.collapsed .fieldset-legend {
       border-bottom: none; }
-      html.js fieldset.collapsed .fieldset-legend a:before {
+      html.js fieldset.collapsed .fieldset-legend a:before, html.js html.js fieldset.collapsed .fieldset-legend a:before {
         content: '\25B8';
         color: #414c52; }
 
@@ -727,7 +771,7 @@ ul.primary {
     ul.primary li.active:hover {
       background: none; }
     ul.primary li.active a.active {
-      border-color: #e7eef0;
+      border-color: #d8e1e3;
       border-bottom: none;
       padding: 9px 23px;
       color: #428bca; }

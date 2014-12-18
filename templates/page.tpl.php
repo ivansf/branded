@@ -32,12 +32,16 @@
 
 <div class="branded-wrapper <?php echo (theme_get_setting('branded-full')) ? 'full-width' : '' ?>">
 
+	<div id="console">
 	<?php if ($show_messages && $messages): ?>
-		<div id="console">
-			<?php print $messages; ?>
-		</div>
-	<?php endif; ?>
 
+			<a id="close-messages" href="#">Clear messages</a>
+			<div class="message-list">
+				<?php print $messages; ?>
+			</div>
+
+	<?php endif; ?>
+	</div>
 
 
 	<?php if ($primary_local_tasks || $secondary_local_tasks || $action_links || (!$toolbar && isset($secondary_menu))): ?>

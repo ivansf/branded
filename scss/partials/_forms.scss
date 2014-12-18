@@ -1,27 +1,34 @@
 input[type="text"],
-input[type="password"],
 input[type="date"],
-input[type="datetime"],
+input[type="time"],
 input[type="email"],
 input[type="number"],
+input[type="password"],
+input[type="datetime"],
 input[type="search"],
 input[type="tel"],
-input[type="time"],
 input[type="url"],
 textarea {
 //  @include border-radius;
 //  @include box-shadow(inset 0 1px 2px rgba(0,0,0,0.1));
 //  @include transition(all 0.15s linear);
   background-color: #FFF;
-  border: 1px solid $primaryBorder;
+  border: 1px solid $primary-border;
   color: $primaryBlack;
   margin-bottom: 5px;
   padding: 7px;
 
   &:focus {
-    background: $bgSubtle;
+    background-color: darken(#FFF, 1%);
     outline: none;
-    border-color: darken($primaryBorder, 20%);
+    border-color: $primary-border-focus;
+
+  }
+
+  &:hover {
+    @include transition(border, 0.2s, ease-in-out);
+    border-color: $primary-border-focus;
+
   }
 
   &[disabled] {
@@ -34,10 +41,11 @@ textarea {
   }
 }
 
+
 select {
 //  @include border-radius;
   background-color: #FFF;
-  border: 1px solid $primaryBorder;
+  border: 1px solid $primary-border;
   color: lighten($primaryBlack, 20%);
   height: 2.2em;
   line-height: 2.2em;
@@ -117,15 +125,23 @@ label {
   }
 }
 
-// ---------------------------------------------------------------------------
-// Fieldsets
+.description, .fieldset-description, .compact-link {
+  color: lighten($text-color, 20%);
+  font-size: 80%;
+  line-height: 1.6;
+}
 
-fieldset {
-//  @include border-radius;
+/**
+
+Fieldsets
+
+**/
+
+fieldset, html.js fieldset {
   background: $fieldset-bg-color;
-  border: 1px solid darken(#FFF, 6%);
-  margin: 0 0 1em;
-  padding: 2.5em 0.625em 0.35em;
+  border: 1px solid darken(white, 6%);
+  margin: 0 0 20px;
+  padding: 30px 15px 15px 15px;
   position: relative;
 
   &.fieldset-no-legend {
@@ -133,19 +149,16 @@ fieldset {
   }
 
   .fieldset-legend {
-//    @include border-top-radius(2px);
-    background: darken($fieldset-bg-color, 5%);
-    border-bottom: 1px solid darken(#FFF, 10%);
+    background: lighten($fieldset-legend-color, 35%);
+    border-bottom: 1px solid lighten($fieldset-legend-color, 25%);
     color: $text-color;
     display: block;
-    font-weight: bold;
     padding: 5px 8px;
     position: absolute;
     text-shadow: 0 1px 0 #FFF;
     top: 1px;
     right: 1px;
     left: 1px;
-
     a {
       text-decoration: none;
       &:hover {
@@ -155,11 +168,18 @@ fieldset {
   }
 
   &.collapsible {
-    .fieldset-legend a:before {
-      content: '\25BE';
-      display: inline-block;
-      width: 15px;
+
+    .fieldset-legend {
+      background: lighten($fieldset-legend-color, 35%);
+
+      & a:before {
+        content: '\25BE';
+        background: none;
+        display: inline-block;
+        width: 15px;
+      }
     }
+
   }
 
   &.container-inline {
@@ -176,7 +196,7 @@ fieldset {
 
   html.js &.collapsed {
     border-width: 1px;
-    height: 26px;
+    height: 14px;
     padding-top: 0;
 
     .fieldset-legend {
@@ -243,17 +263,17 @@ input.form-radio {
 
 div.vertical-tabs {
 //  @include border-right-radius;
-  border-color: $primaryBorder;
+  border-color: $primary-border;
 
   ul.vertical-tabs-list {
 //    @include border-left-radius;
 //    @include box-sizing(border-box);
-    border-color: $primaryBorder;
-    border-left: 1px solid $primaryBorder;
+    border-color: $primary-border;
+    border-left: 1px solid $primary-border;
 
     li {
       background: #FFF;
-      border-color: $primaryBorder;
+      border-color: $primary-border;
       border-left: none;
       text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
 
@@ -288,7 +308,7 @@ div.vertical-tabs {
 .fieldsets-group {
 //  @include border-radius;
   background: #FFF;
-  border: 1px solid $primaryBorder;
+  border: 1px solid $primary-border;
   margin: 1em 0;
 
   fieldset {
@@ -303,7 +323,7 @@ div.vertical-tabs {
     .fieldset-legend {
 //      @include border-radius(0);
       border: none;
-      border-bottom: 1px solid $primaryBorder;
+      border-bottom: 1px solid $primary-border;
       position: relative;
       display: block;
       padding: 8px;
@@ -317,7 +337,7 @@ div.vertical-tabs {
 
     .fieldset-wrapper {
       background: #FFF;
-      border-bottom: 1px solid $primaryBorder;
+      border-bottom: 1px solid $primary-border;
       padding: 1px 23px;
     }
 
@@ -327,7 +347,7 @@ div.vertical-tabs {
 
       .fieldset-legend {
 //        @include border-radius(0);
-        border-bottom: 1px solid $primaryBorder;
+        border-bottom: 1px solid $primary-border;
 
         a {
           color: darken($text-color, 10%);
@@ -356,7 +376,7 @@ html.js input.throbbing {
 //  @include border-bottom-radius;
 //  @include box-shadow(inset 0 1px 2px rgba(0,0,0,0.1));
   background: $bgSubtle;
-  border-color: darken($primaryBorder, 15%);
+  border-color: darken($primary-border, 15%);
   border-top: 0;
   margin-top: -4px;
 

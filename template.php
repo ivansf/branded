@@ -75,7 +75,7 @@ function branded_preprocess_page(&$vars) {
 	}
 
 	// Set a page icon class.
-	$vars['page_icon_class'] = ($item = menu_get_item()) ? implode(' ' , $item['href']) : '';
+//	$vars['page_icon_class'] = ($item = menu_get_item()) ? implode(' ' , $item['href']) : '';
 
 	// Overlay is enabled.
 	$vars['overlay'] = (module_exists('overlay') && overlay_get_mode() === 'child');

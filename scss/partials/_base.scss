@@ -12,7 +12,8 @@ $link-hover: #4ca0e8;
 $link-color-secondary: #687c85;
 $link-color-secondary-hover: #8aa5b1;
 
-$primaryBorder: #d8e1e3;
+$primary-border: #d8e1e3;
+$primary-border-focus: #428bca;
 $bgSubtle: #edf1f2;
 $primaryBlack: #333333;
 $bgDisabled: #333333;
@@ -23,6 +24,7 @@ $red: #F06A6A;
 // FAPI
 $fieldset-bg-color: #FFF;
 $button-default-bg: #edf1f2;
+$fieldset-legend-color: #7196ac;
 
 // Errors
 $error-bg: #F2DEDE;
@@ -159,9 +161,40 @@ Page Header
 /**
 Messages
 **/
+
+
+#console {
+
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+
+  #close-messages {
+    float: right;
+    background: $bg-header;
+    color: $link-color;
+//    background: $primary-border;
+    border: 1px solid #C1D3D7;
+    border-top: 0;
+    font-size: 70%;
+    height: 25px;
+    line-height: 25px;
+    display: block;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .message-list {
+    padding-top: 35px;
+  }
+
+}
+
+
+
 div.messages {
-  margin: 15px 20px;
   font-size: 82%;
+  margin: 0 0 15px;
 
   li {
     line-height: 165%;
@@ -283,7 +316,7 @@ div.admin-panel {
 @mixin button {
   color: $text-color-bold !important;
   background-color: $button-default-bg;
-  border-bottom-color: $primaryBorder;
+  border-bottom-color: $primary-border;
   -webkit-box-shadow: 0 1px 1px rgba(90,90,90,0.1);
   box-shadow: 0 1px 1px rgba(90,90,90,0.1);
   display: inline-block;
@@ -345,10 +378,24 @@ div.admin-panel {
 
   .content {
     font-size: 90%;
+    line-height: 1.6;
     color: lighten($text-color-secondary, 15%);
   }
+}
 
 
 
 
+/**
+
+Mixins
+
+**/
+
+@mixin transition($transition-property, $transition-time, $method) {
+  -webkit-transition: $transition-property $transition-time $method;
+  -moz-transition: $transition-property $transition-time $method;
+  -ms-transition: $transition-property $transition-time $method;
+  -o-transition: $transition-property $transition-time $method;
+  transition: $transition-property $transition-time $method;
 }
