@@ -28,7 +28,7 @@ $fieldset-legend-color: #7196ac;
 
 // Errors
 $error-bg: #F2DEDE;
-$status-bg: #a5f09e;
+$status-bg: #b0f08d;
 $warning-bg: #eef0bb;
 
 
@@ -195,6 +195,7 @@ Messages
 div.messages {
   font-size: 82%;
   margin: 0 0 15px;
+  padding-left: 15px;
 
   li {
     line-height: 165%;
@@ -337,37 +338,39 @@ div.admin-panel {
 %button-default {
   @include button;
 }
-
+%button-link {
+  @include button;
+}
 %button-green {
-  @extend %button;
+  @extend button;
 }
 
 %button-green-medium {
-  @extend %button;
+  @extend button;
 }
 
 %button-blue {
-  @extend %button;
+  @extend button;
 }
 
 %button-blue-medium {
-  @extend %button;
+  @extend button;
 }
 
 %button-red {
-  @extend %button;
+  @extend button;
 }
 
 %button-yellow {
-  @extend %button;
+  @extend button;
 }
 
 %button-dark {
-  @extend %button;
+  @extend button;
 }
 
 %button-medium {
-  @extend %button;
+  @extend button;
 }
 
 

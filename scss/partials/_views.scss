@@ -1,11 +1,85 @@
+.ctools-dropbutton {
+}
+
 .views-admin {
 
   .views-displays {
 
-    background: $bg-secondary;
+    .views-display-top {
+      background: $bg-header;
+
+      .ctools-dropbutton {
+        margin-top: 10px;
+
+
+        .ctools-content {
+
+          li {
+            font-size: 120%;
+          }
+        }
+
+      }
+
+    }
+
+    background: lighten($bg-secondary, 2%);
+
+    .views-ui-display-tab-bucket {
+      border-bottom: 1px solid #CCC;
+      h3 {
+        font-weight: bold;
+      }
+    }
 
     .views-display-settings {
+
     }
+
+    #views-display-menu-tabs {
+      padding-top: 15px;
+      height: auto;
+
+
+      &.tabs.secondary {
+        li {
+
+
+          a {
+            color: $link-color;
+
+            &:hover {
+              background: lighten($link-color, 40%);
+            }
+
+            &.active {
+              color: white;
+            }
+          }
+
+          &.active {
+            a {
+              background: $link-color;
+              border: $link-color;
+              color : white;
+            }
+          }
+
+        }
+
+      }
+
+
+    }
+
   }
 
+}
+
+.views-ui-dialog {
+  box-shadow: 0 0 27px #666;
+}
+
+.ui-widget-header {
+  border: none;
 }
